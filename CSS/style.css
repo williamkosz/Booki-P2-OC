@@ -129,23 +129,26 @@ form{
 }
 
 #icone-location{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--main-bg-color);
     width: 50px;
+    min-width: 50px;
+    text-align: center;
+    line-height: 49px;
+    background-color: var(--main-bg-color);
     border-radius: 15px 0 0 15px;
+    font-size: 20px;
+    align-items: center;
     color: black;
 }
 
 input{
-    display: flex;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
     text-align: center;
     font-size: 18px;
-    font-weight: bold;
-    border: solid 1px var(--main-bg-color);
-    border-right: none;
-    width: 200px;
+    font-weight: 700;
+    outline: none;
 }
 
 ::placeholder{
@@ -173,9 +176,7 @@ button{
 
 .filter{
     display: flex;
-    gap: 15px;
     align-items: center;
-    height: 50px;
 }
 
 .filter-bar {
@@ -185,38 +186,37 @@ button{
 
 .filter h3{
     font-size: 18px;
+    margin-right: 15px;
 }
 
 .filter-content{
     display: flex;
-    flex-direction: row ;
     height: 44px;
     gap: 10px;
     border: 2px solid #D9D9D9;
     border-radius: 25px;
     align-items: center;
     padding: 2px 17px;
+    font-size: 17px;
+    font-weight: bold;
 }
 
 .filter-content:hover{
     background-color: #DEEBFF;
 }
-.filter div{
-    font-size: 17px;
-    font-weight: bold;
-}
+
 .filter i{
     font-size: 22px;
 }
 
 /*********** Info-text ***********/
 
+.info-text img{
+    margin-right: 10px;
+}
 .info-text{
     display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: 10px;
-    height: 24px;
 }
 
 
@@ -418,6 +418,7 @@ footer{
 
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
+
 @media (max-width: 1024px) {
 
     .filter {
@@ -430,9 +431,6 @@ footer{
         margin: 0;
     }
 
-    .info-text {
-        margin-top: 35px;
-    }
     .hebergements-and-populaires {
         flex-direction: column;
     }
@@ -515,6 +513,7 @@ footer{
 }
 
 /* Small devices (phones, less than 768px) */
+
 @media (max-width: 767.98px) {
     /* ... */
 
@@ -522,10 +521,8 @@ footer{
         padding: 0;
     }
 
-    .info-group{
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+        /************** HEADER **************/
+
     header {
         flex-direction: column;
         align-items: center;
@@ -556,24 +553,129 @@ footer{
         border-bottom: 2px solid var(--main-color);
     }
 
+    .info-group{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    /************** SEARCH BAR **************/
+
     button {
         display: none;
     }
 
-    i input{
-        border: 10px solid var(--main-bg-color);
+    input{
+        flex: 1;
+        width: 100%;
+        text-align: start;
+        padding: 0 35px 0 20px;
     }
 
     #icone-mobile{
         display: flex;
-        border: 1px solid var(--main-color);
+        border: none;
         background: var(--main-color);
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         border-radius: 15px;
+        position: relative;
+        left: -12px;
+        height: 49px;
     }
 
     #phone-icone{
         display: flex;
         color: white;
-        font-size: 17px;
+        font-size: 18px;
     }
+
+/************** FILTERS **************/
+
+    .filter-bar{
+        
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .filter-content{
+        font-weight: 700;
+        font-size: 14px;
+        justify-content: center;
+        width: 37%
+    }
+
+    /************** POPULAIRES  **************/
+
+    .populaires{
+        order: -1;
+        margin: 0;
+    }
+
+    .populaires-cards{
+        flex-direction: column;
+    }
+
+    .populaires-cards a{
+        width: 100%;
+    }
+
+    /************** HEBERGEMENTS  **************/
+
+    .hebergements-and-populaires section{
+        padding: 20px;
+    }
+
+    .hebergements-and-populaires{
+        gap:15px;
+    }
+
+    .hebergements-and-populaires .hebergements{
+        background-color: white;
+    }
+
+    .hebergement-card-block{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hebergement-card-block .card{
+        max-width: none;
+    }
+
+    .hebergement-card-block a{
+        width: 100%;
+    }
+
+    .hebergements .content-title{
+        margin-top: 15px;
+    }
+
+    /************** ACTIVITÉS À MARSEILLE  **************/
+
+    .activity-card-container{
+        flex-direction: column;
+    }
+
+    .activity-card-container a{
+        height: 200px;
+    }
+
+    .activity-card img{
+        height: 141px;
+        max-height: 141px;
+        min-height: 141px;
+    }
+
+    /************** FOOTER **************/
+
+    footer{
+        flex-direction: column;
+        padding: 30px;
+        gap: 50px;
+    }
+
+    .footer-container{
+        width: 100%;
+        padding: 0;
+    }
+}   
