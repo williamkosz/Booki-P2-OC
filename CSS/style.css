@@ -19,6 +19,8 @@ body {
     justify-content: center;
     flex-direction: column;
     margin: 0;
+    max-width: 1440px;
+    min-width: 320px;
 }
 
 
@@ -59,7 +61,6 @@ a {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 1440px;
     box-sizing: border-box;
     padding: 0 50px 50px 50px;
 }
