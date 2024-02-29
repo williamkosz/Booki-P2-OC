@@ -258,6 +258,7 @@ button{
     flex-wrap: wrap;
     width: 100%;
     max-width: 261px;
+    height: 100%;
 }
 
 .hebergement-card-block img{
@@ -655,6 +656,7 @@ footer{
 
     .activity-card-container{
         flex-direction: column;
+        gap: 15px;
     }
 
     .activity-card-container a{
